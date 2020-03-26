@@ -14,6 +14,11 @@ namespace phonetic{
     }
 
     string find(string text, string word){
+        string temp = "";
+       for (auto x:word){
+           if (x != ' ') temp = temp + x;
+        }
+        
         if (word == "" || text == "") throw string("The word you enterd is an empty word");
         text = text + " ";
         int LetterInWorde = 0;
