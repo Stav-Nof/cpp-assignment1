@@ -49,7 +49,7 @@ TEST_CASE("Test replacement of g and j") {
     CHECK(find(text, "gordan") == string("gordan"));
     CHECK(find(text, "jordan") == string("gordan"));
     CHECK(find(text, "programmers") == string("programmers"));
-    CHECK(find(text, "projrammers") == string("projrammers"));
+    CHECK(find(text, "projrammers") == string("programmers"));
 }
 
 TEST_CASE("Test replacement of c and k and q") {
@@ -59,8 +59,8 @@ TEST_CASE("Test replacement of c and k and q") {
     CHECK(find(text, "kooking") == string("qooking"));
     CHECK(find(text, "koocing") == string("qooking"));
     CHECK(find(text, "qooqing") == string("qooking"));
-    CHECK(find(text, "kiet") == string("quiet"));
-    CHECK(find(text, "ciet") == string("quiet"));
+    CHECK(find(text, "kuiet") == string("quiet"));
+    CHECK(find(text, "cuiet") == string("quiet"));
     CHECK(find(text, "quiet") == string("quiet"));
     CHECK(find(text, "calm") == string("kalm"));
     CHECK(find(text, "calm") == string("kalm"));
@@ -123,14 +123,14 @@ TEST_CASE("Test replacement of i and y") {
     CHECK(find(text, "everithing") == string("everything"));
     CHECK(find(text, "everythyng") == string("everything"));
     CHECK(find(text, "everithyng") == string("everything"));
-    CHECK(find(text, "imagine") == string("imagine "));
-    CHECK(find(text, "ymagine") == string("imagine "));
-    CHECK(find(text, "imagyne") == string("imagine "));
+    CHECK(find(text, "imagine") == string("imagine"));
+    CHECK(find(text, "ymagine") == string("imagine"));
+    CHECK(find(text, "imagyne") == string("imagine"));
     CHECK(find(text, "ymagyne") == string("imagine"));
     CHECK(find(text, "is") == string("is"));
     CHECK(find(text, "ys") == string("is"));
-    CHECK(find(text, " you") == string("you"));
-    CHECK(find(text, " iou") == string("you"));
+    CHECK(find(text, "you") == string("you"));
+    CHECK(find(text, "iou") == string("you"));
 }
 
 TEST_CASE("Test replacement of lower-case and upper-case") {

@@ -4,7 +4,17 @@
 using namespace std;
 
 namespace phonetic{
+        string toLower (string s){
+        string ans = "";
+        for (auto c:s){
+            if (c >= 'A' && c <= 'Z')ans = ans + (char)(c + 'a' - 'A');
+            else ans = ans + c;
+        }
+        return ans;
+    }
+
     string find(string text, string word){
+        text = text + " ";
         int LetterInWorde = 0;
         for (auto c:word){
             LetterInWorde++;
@@ -16,9 +26,9 @@ namespace phonetic{
             if (x == ' '){
                 if (LetterInWorde == counter){
                     ans = tempWorde;
-                    tempWorde = tolower(tempWorde);
-                    word = tolower(word);
-                    for (int i = 0; i == LetterInWorde; i++){
+                    tempWorde = toLower(tempWorde);
+                    word = toLower(word);
+                    for (int i = 0; i <= LetterInWorde; i++){
                         if (i == LetterInWorde) return ans;
                         if(tempWorde[i] == word[i]) continue;
                         if(tempWorde[i] == 'v' || tempWorde[i] == 'w'){
@@ -59,13 +69,4 @@ namespace phonetic{
         throw string("The text does not contain the requested word");
     }
 
-
-    string tolower (string s){
-        string ans = "";
-        for (auto c:s){
-            if (c >= 'A' && c >= 'Z')ans = ans + (char)(c - 'Z');
-            else ans = ans + c;
-        }
-        return ans;
-    }
 }
