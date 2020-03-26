@@ -19,7 +19,7 @@ namespace phonetic{
            if (x != ' ') temp = temp + x;
         }
         
-        if (word == "" || text == "") throw string("The word you enterd is an empty word");
+        if (word == "" || text == "") throw exception();
         text = text + " ";
         int LetterInWorde = 0;
         for (auto c:word){
@@ -72,7 +72,7 @@ namespace phonetic{
               counter++;
             }
         }
-        throw string("The text does not contain the requested word");
+        throw exception();
     }
 
 }
